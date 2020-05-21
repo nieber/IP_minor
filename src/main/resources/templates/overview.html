@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>restaurants</title>
+</head>
+<body>
+<h2>tasks</h2>
+<table th:unless="${tasks.isEmpty()}">
+    <thead>
+    <tr>
+        <th>title</th>
+        <th>description</th>
+        <th>dueDate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="task:${tasks}">
+        <td th:text="${task.title}" ></td>
+        <td th:text="${task.description}" ></td>
+        <td th:text="${task.getDueDateString()}" ></td>
+    </tr>
+    </tbody>
+</table>
+<p th:if="${tasks.isEmpty()}">No tasks left to do</p>
+</body>
+</html>

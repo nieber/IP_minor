@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>add a task</title>
+</head>
+<body>
+<h2>new task</h2>
+<form method="post" action="#" th:action="@{/tasks/adding}" th:object="${task}">
+    <p>title: <input type="text" th:field="*{title}" /> </p>
+    <p>Description: <input type="text" th:field="*{description}" /></p>
+    <p>Message: <input type="datetime-local" th:field="*{dueDate}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+
+</form>
+</body>
+</html>

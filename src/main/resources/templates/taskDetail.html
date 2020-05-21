@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>task detail</title>
+</head>
+<body>
+<h2>task detail</h2>
+<p th:if="${task == null}"> Task not found</p>
+<div th:if="${task != null}">
+    <p th:text="'title: ' + ${task.title}"></p>
+    <p th:text="'description: ' + ${task.description}"></p>
+    <p th:text="'Due date: ' + ${task.dueDateString}"></p>
+</div>
+</body>
+</html>
